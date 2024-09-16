@@ -1,8 +1,13 @@
 #!/bin/bash
 
+# Exit on non defined variables and on non zero exit codes
+# set -eu
+
 if [ ! -f "vendor/autoload.php" ]; then
     composer install --no-progress --no-interaction
 fi
+
+# echo ls -la
 
 if [ ! -f ".env" ]; then
     echo "Creating env file for env $APP_ENV"
